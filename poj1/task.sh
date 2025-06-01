@@ -51,11 +51,11 @@ case "$command" in
 
         task_number=0
         while IFS= read -r line; do
-            ((task_number++))
-            priority="${line:0:1}"
-            title="${line:2}"
-            stars=$(get_stars "$priority")
-            printf "%d %s   %s\n" "$task_number" "$stars" "$title"
+        ((task_number++))
+        priority="${line:0:1}"
+        title="${line:2}"
+        stars=$(get_stars "$priority")
+        printf "%d %s   %s\n" "$task_number" "$stars" "$title"
         done < "$TASKS_FILE"
         ;;
 
